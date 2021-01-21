@@ -1,5 +1,5 @@
 
-var monkey , monkey_running
+var  , monkey_running
 var banana ,bananaImage, obstacle, obstacleImage
 var bananaGroup, obstacleGroup
 var score=0
@@ -25,10 +25,10 @@ function preload(){
 
 
 function setup() {
-  createCanvas(600,400
- monkey=createSprite(80,315,20,20)
-  monkey.addAnimation("moving",monkey_running)
-  monkey.scale=0.1
+  createCanvas(600,400)
+ =createSprite(80,315,20,20)
+  .addAnimation("moving",monkey_running)
+  .scale=0.1
   
   
   ground=createSprite(300,400,1200,10)
@@ -42,20 +42,20 @@ console.log(ground.x)
 
 function draw() {
 background(backImage)
-  console.log(monkey.y)
+  console.log(.y)
   spawnbanana()
-  if(keyDown("space")&& monkey.y > 364) {
-        monkey.velocityY = -15;
+  if(keyDown("space")&& .y > 364) {
+        .velocityY = -15;
   }
   if (ground.x<0){
     ground.x=ground.width/2
   }
   
-  monkey.velocityY = monkey.velocityY + 0.5
+  .velocityY = .velocityY + 0.5
   
-   monkey.collide(ground);
+   .collide(ground);
   
- if(monkey.isTouching(bananaGroup)){
+ if(.isTouching(bananaGroup)){
    score++
    bananaGroup.destroyEach()
  }
@@ -63,7 +63,7 @@ background(backImage)
 stroke("white")
 textSize(20)
 fill("black")
-survivalTime=Math.ceil(frameCount/frameRate())
+survivalTime=.ceil(frameCount/frameRate())
 text("Survival Time: "+survivalTime,100,50)
   
   
@@ -79,7 +79,7 @@ function spawnbanana(){
 //write code here to spawn the banana
   if (frameCount % 200 ===0) {
     var banana = createSprite(600,120,40,10);
-    banana.y=Math.round(random(120,200))
+    banana.y=.round(random(120,200))
     banana.addImage(bananaImage);
     banana.scale = 0.5;
     banana.velocityX = -3;
